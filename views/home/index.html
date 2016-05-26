@@ -7,7 +7,7 @@
         <footer>
             <p>Hello!</p>
             <h1>Description site</h1>
-            <form class="" action="/capture" method="post">
+            <form id="captureForm" action="/capture" method="post">
                 <label>
                     <span>Your E-email:</span>
                     <input required type="email" name="email" placeholder="email@example.com">
@@ -22,8 +22,9 @@
                 </label>
 
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <button type="submit">SEND</button>
+                <button id="buttonInput" type="submit">SEND</button>
             </form>
         </footer>
     </section>
+    <script>captureForm.addEventListener('submit', function() { buttonInput.disabled = true; });</script>
 </main>

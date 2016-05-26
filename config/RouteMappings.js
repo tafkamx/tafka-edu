@@ -2,7 +2,7 @@ var RouteMappings = require('route-mappings');
 
 var routeMappings = RouteMappings()
   .get('/', 'Home#index')
-  .get('/no-layout', { to : 'Home#noLayout' })
+  .post('/capture', { to : 'Home#capture' })
 
 
 module.exports = routeMappings;

@@ -1,0 +1,32 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+
+    // First application
+    {
+      name      : "academy",
+      script    : "bin/server.js",
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy : {
+    production : {
+      user : "node",
+      host : "52.88.223.91",
+      ref  : "origin/master",
+      repo : "https://github.com/Empathia/empathia.academy",
+      path : "/home/deploy/apps/academy",
+      "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}

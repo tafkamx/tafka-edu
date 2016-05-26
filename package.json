@@ -16,6 +16,9 @@
     "src": "./_src",
     "dest": "./public",
     "public": "./public",
+    "filter": [
+      "!**/_*"
+    ],
     "rename": "**:{filepath/1}/{filename}.{extname}"
   },
   "dependencies": {
@@ -59,6 +62,7 @@
   },
   "devDependencies": {
     "kramed": "^0.5.6",
+    "less": "^2.7.1",
     "tarima-browser-sync": "^0.1.1",
     "tarima-cli": "git+https://github.com/gextech/tarima-cli.git#next"
   }

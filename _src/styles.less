@@ -1,0 +1,90 @@
+@import '_gradients';
+@import '_config';
+@import '_fonts';
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, .layer {
+  height: 100%;
+}
+
+body {
+  font-family: 'Graphik-Regular', sans-serif;
+}
+
+p {
+  letter-spacing: 0;
+  font-family: 'Graphik-Extralight';
+  font-weight: 200;
+  font-size: 1.4em;
+  margin-bottom: .5em;
+}
+
+h1 {
+  margin-bottom: .5em;
+  font-family: 'Graphik-Bold';
+  font-weight: 700;
+  font-size: 3em;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255,255,255,.5);
+}
+
+:-moz-placeholder {
+   color: rgba(255,255,255,.5);
+}
+
+::-moz-placeholder {
+   color: rgba(255,255,255,.5);
+}
+
+:-ms-input-placeholder {
+   color: rgba(255,255,255,.5);
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+
+  span {
+    display: block;
+    margin-bottom: .3em;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+}
+
+input[type=text], input[type=email], textarea, button {
+  border: 0;
+  padding: 10px;
+  min-height: 1.1em;
+  font-size: 1.1em;
+  background: none;
+  color: @color-white;
+  border: 2px solid @color-white;
+
+  &:invalid {
+    border-color: @accent-red;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: @accent-green;
+  }
+}
+
+button {
+  font-size: 1.5em;
+  padding: .6em 3.3em;
+  font-weight: bold;
+
+  &:focus {
+    color: @accent-green;
+  }
+}

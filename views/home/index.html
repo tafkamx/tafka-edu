@@ -1,11 +1,29 @@
-<p>This must be ajax as the response is always json</p>
+<main class="layer gradient">
+    <div class="layer gradient-image"></div>
+    <section class="layer gradient-content">
+        <header>
+            <span>ICON</span>
+        </header>
+        <footer>
+            <p>Hello!</p>
+            <h1>Description site</h1>
+            <form class="" action="/capture" method="post">
+                <label>
+                    <span>Your E-email:</span>
+                    <input required type="email" name="email" placeholder="email@example.com">
+                </label>
+                <label>
+                    <span>Your Name:</span>
+                    <input required type="text" name="name" placeholder="John Doe">
+                </label>
+                <label>
+                    <span>Your role:</span>
+                    <textarea name="role" placeholder="I am..."></textarea>
+                </label>
 
-<p>HTTP 200: ok</p>
-<p>HTTP 400: validation Error : responds with an object with errors</p>
-
-<form class="" action="/capture" method="post">
-    <input type="text" name="email" value="" placeholder="email@example.com" />
-    <input type="text" name="name" value="" placeholder="Your Name" />
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-    <input type="submit"  value="Send">
-</form>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">SEND</button>
+            </form>
+        </footer>
+    </section>
+</main>

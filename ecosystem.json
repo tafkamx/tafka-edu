@@ -10,7 +10,8 @@
       name      : "academy",
       script    : "bin/server.js",
       env_production : {
-        NODE_ENV: "production"
+        NODE_ENV: "production",
+        PORT: 4001
       }
     }
   ],
@@ -26,7 +27,7 @@
       ref  : "origin/master",
       repo : "git@academy:Empathia/empathia.academy.git",
       path : "/home/deploy/apps/academy",
-      "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "npm install; cp ../shared/config.js ./config/config.js pm2 startOrRestart ecosystem.json --env production"
     }
   }
 }

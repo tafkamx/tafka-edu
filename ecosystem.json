@@ -24,7 +24,7 @@
       user : "deploy",
       host : "52.88.223.91",
       ref  : "origin/master",
-      repo : "https://github.com/Empathia/empathia.academy",
+      repo : "git@academy:Empathia/empathia.academy.git",
       path : "/home/deploy/apps/academy",
       "post-deploy" : "npm install ; pm2 startOrRestart ecosystem.json --env production"
     }

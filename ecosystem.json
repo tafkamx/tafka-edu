@@ -21,7 +21,7 @@
    */
   deploy : {
     production : {
-      user : "node",
+      user : "deploy",
       host : "52.88.223.91",
       ref  : "origin/master",
       repo : "https://github.com/Empathia/empathia.academy",

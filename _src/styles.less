@@ -49,6 +49,7 @@ h1 {
 label {
   margin-bottom: 10px;
   display: block;
+  max-width: 90%;
 
   span {
     display: block;
@@ -88,5 +89,34 @@ input[type=text], input[type=email], textarea, [role=button], button {
 
   &:focus {
     color: @accent-green;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    font-size: 75%;
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .gradient-image {
+    background-size: auto 100%;
+  }
+
+  .gradient-content {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    footer {
+      align-self: flex-end;
+      padding: 3.333em;
+    }
+
+    header {
+      align-self: flex-start;
+      padding-top: 40px;
+    }
   }
 }

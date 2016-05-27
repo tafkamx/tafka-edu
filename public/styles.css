@@ -12,19 +12,9 @@
 }
 .gradient-content {
   top: 0;
+  padding: 1em;
   position: absolute;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gradient-content footer {
-  align-self: flex-end;
-  padding: 3.333em;
-}
-.gradient-content header {
-  align-self: flex-start;
-  padding-top: 40px;
 }
 @font-face {
   font-family: 'Graphik-Extralight';
@@ -86,6 +76,7 @@ h1 {
 label {
   margin-bottom: 10px;
   display: block;
+  max-width: 90%;
 }
 label span {
   display: block;
@@ -133,4 +124,28 @@ button {
 [role=button]:focus,
 button:focus {
   color: #98DC00;
+}
+@media screen and (max-width: 720px) {
+  body {
+    font-size: 75%;
+  }
+}
+@media screen and (min-width: 721px) {
+  .gradient-image {
+    background-size: auto 100%;
+  }
+  .gradient-content {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gradient-content footer {
+    align-self: flex-end;
+    padding: 3.333em;
+  }
+  .gradient-content header {
+    align-self: flex-start;
+    padding-top: 40px;
+  }
 }

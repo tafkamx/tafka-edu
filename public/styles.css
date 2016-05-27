@@ -98,6 +98,7 @@ label textarea {
 input[type=text],
 input[type=email],
 textarea,
+[role=button],
 button {
   border: 0;
   padding: 10px;
@@ -110,21 +111,26 @@ button {
 input[type=text]:invalid,
 input[type=email]:invalid,
 textarea:invalid,
+[role=button]:invalid,
 button:invalid {
   border-color: #FF0000;
 }
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus,
+[role=button]:focus,
 button:focus {
   outline: none;
   border-color: #98DC00;
 }
+[role=button],
 button {
   font-size: 1.5em;
+  text-decoration: none;
   padding: .6em 3.3em;
   font-weight: bold;
 }
+[role=button]:focus,
 button:focus {
   color: #98DC00;
 }

@@ -60,7 +60,7 @@ label {
   }
 }
 
-input[type=text], input[type=email], textarea, button {
+input[type=text], input[type=email], textarea, [role=button], button {
   border: 0;
   padding: 10px;
   min-height: 1.1em;
@@ -79,8 +79,10 @@ input[type=text], input[type=email], textarea, button {
   }
 }
 
-button {
+
+[role=button], button {
   font-size: 1.5em;
+  text-decoration: none;
   padding: .6em 3.3em;
   font-weight: bold;
 

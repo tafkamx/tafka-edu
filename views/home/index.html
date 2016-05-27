@@ -5,25 +5,43 @@
             <span>ICON</span>
         </header>
         <footer>
-            <p>Hello!</p>
-            <h1>Description site</h1>
-            <form id="captureForm" action="/capture" method="post">
-                <label>
-                    <span>Your E-email:</span>
-                    <input required type="email" name="email" placeholder="email@example.com">
-                </label>
-                <label>
-                    <span>Your Name:</span>
-                    <input required type="text" name="name" placeholder="John Doe">
-                </label>
-                <label>
-                    <span>Your role:</span>
-                    <textarea name="role" placeholder="I am..."></textarea>
-                </label>
+            <% if (status.ok) { %>
+                <p>Yay!</p>
+                <h1>Everything is alright</h1>
+                <a href="/" role="button">GO BACK</a>
+            <% } else { %>
 
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <button id="buttonInput" type="submit">SEND</button>
-            </form>
+                <% if (status.err) { %>
+                    <% for (var type in status.err.errors) { %>
+                    <p><%= status.err.errors[type].message %></p>
+                    <% } %>
+                    <h1>An error has ocurred</h1>
+                <% } %>
+
+                <% if (!(status.ok || status.err)) { %>
+                    <p>Hello!</p>
+                    <h1>Description site</h1>
+                <% } %>
+
+                <form id="captureForm" action="/capture" method="post">
+                    <label>
+                        <span>Your E-email:</span>
+                        <input required type="email" name="email" placeholder="email@example.com" value="<%= params.email %>">
+                    </label>
+                    <label>
+                        <span>Your Name:</span>
+                        <input required type="text" name="name" placeholder="John Doe" value="<%= params.name %>">
+                    </label>
+                    <label>
+                        <span>Your role:</span>
+                        <textarea name="role" placeholder="I am..."><%= params.role %></textarea>
+                    </label>
+
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button id="buttonInput" type="submit">SEND</button>
+                </form>
+
+            <% } %>
         </footer>
     </section>
     <script>captureForm.addEventListener('submit', function() { buttonInput.disabled = true; });</script>
